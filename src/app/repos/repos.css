@@ -1,0 +1,99 @@
+
+.repo_search {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+.repo_search .header{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo_search input{
+    width: 30rem;
+    padding: .9rem;
+    border-radius: .5rem;
+}
+
+.repo_search .repos_list_title{
+    display: flex;
+    justify-content: space-between;
+}
+.repo_search .repos_list_title small:hover{
+    color: var(--blue);
+}
+
+.repo_search .repo_list {
+    width: 50rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+}
+
+.repo_search .repo_list .repo_card {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid var(--muted-gray);
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: var(--tran-05);
+    font-size: 1.4rem;
+    
+}
+.repo_search .repo_list .repo_card:hover {
+    background-color: var(--muted-gray);
+}
+.repo_search .repo_list .repo_card .card_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.repo_card .repo_name{
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 1.8rem;
+}
+.repo_card:hover .repo_name{
+    color: var(--dark-gray);
+}
+
+.repo_card .stared{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+.repo_card .stared .icon {
+    color: yellow;
+}
+.repo_card:hover .stared .icon {
+    transform: scale(1.3);
+}
+.repo_search .repo_list .repo_card .card_body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.repo_card .card_body .repo_fork{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    
+}
+.repo_card .card_body .repo_type{
+    padding: .2rem .6rem;
+    color: var(--muted-gray);
+    border-radius: 1rem;
+    border: .1rem solid var(--muted-gray);
+    
+}
+.repo_card:hover .card_body .repo_type{
+    color: var(--dark-gray);
+    border: .1rem solid var(--dark-gray);
+
+}

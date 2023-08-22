@@ -1,4 +1,4 @@
-:root{
+:root {
     /* === Colors === */
     --dark-gray: #0D1117;
     --gray: #D9EDF3;
@@ -7,14 +7,14 @@
     --light-blue: #88b8fb;
     --white: #fff;
 
-      /* === Transition === */
-      --tran-02: all 0.2s ease;
-      --tran-03: all 0.3s ease;
-      --tran-04: all 0.4s ease;
-      --tran-05: all 0.5s ease;
-      --tran-08: all 0.8s ease;
-      --tran-1: all 1s ease;
-      --tran-3: all 3s ease;
+    /* === Transition === */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    --tran-08: all 0.8s ease;
+    --tran-1: all 1s ease;
+    --tran-3: all 3s ease;
 }
 
 * {
@@ -28,7 +28,7 @@ html {
     background-color: var(--dark-gray);
 }
 
-body{
+body {
     color: var(--gray);
     font-size: 1.6rem;
     max-width: 80rem;
@@ -39,11 +39,15 @@ body{
 .app_title {
     margin-top: 2rem;
 }
+.app_title:hover {
+    color: var(--blue);
+}
 
-a{
+a {
     text-decoration: none;
     color: var(--gray);
 }
-a:visited{
+
+a:visited {
     color: var(--gray);
 }

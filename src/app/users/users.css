@@ -9,7 +9,7 @@
     display: flex;
     gap: 1.5rem;
     cursor: pointer;
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     transition: var(--tran-05);
 }
 
@@ -111,6 +111,9 @@
     display: flex;
     gap: .3rem;
     margin-top: 1.5rem;
+}
+.user_profile .user_info .url:hover{
+    color: var(--blue);
 }
 
 /* User repositoreis */
