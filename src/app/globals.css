@@ -2,7 +2,7 @@
     /* === Colors === */
     --dark-gray: #0D1117;
     --gray: #D9EDF3;
-    --muted-gray: #2c323a;
+    --muted-gray: #858992;
     --blue: #2F81F7;
     --light-blue: #88b8fb;
     --white: #fff;
@@ -25,11 +25,25 @@
 
 html {
     font-size: 62.5%;
+    background-color: var(--dark-gray);
 }
 
 body{
-    background-color: var(--dark-gray);
     color: var(--gray);
     font-size: 1.6rem;
-    max-width: 55rem;
+    max-width: 80rem;
+    /* background-color: #2F81F7; */
+    margin: 0 auto;
+}
+
+.app_title {
+    margin-top: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--gray);
+}
+a:visited{
+    color: var(--gray);
 }

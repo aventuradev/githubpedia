@@ -1,46 +1,55 @@
-.users_list { 
+.users_list {
     width: 100%;
 }
+
 .users_list .user_card {
     padding: 2rem 1.5rem;
     border: 0.1rem solid var(--muted-gray);
     border-radius: .5rem;
-    margin: 1.5rem;
     display: flex;
     gap: 1.5rem;
     cursor: pointer;
+    margin: 1.5rem;
     transition: var(--tran-05);
 }
+
 .users_list .user_card:hover {
-  background-color: var(--muted-gray);
+    background-color: var(--muted-gray);
 }
+
 .users_list .user_card img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     transition: var(--tran-02);
 }
+
 .users_list .user_card:hover img {
     transform: scale(1.3);
 }
-.users_list .user_card .user_names{
+
+.users_list .user_card .user_names {
     display: flex;
     gap: .5rem;
 }
-.users_list .user_card .user_names .name{
+
+.users_list .user_card .user_names .name {
     color: var(--blue);
 }
-.users_list .user_card .user_names .username{
+
+.users_list .user_card .user_names .username {
     color: var(--gray);
     font-weight: 100;
 }
-.users_list .user_card .bio{
+
+.users_list .user_card .bio {
     font-size: 1.4rem;
     color: var(--white);
     margin: .8rem 0 .8rem 0;
     font-weight: 200;
     max-width: 40rem;
 }
+
 .user_info .other_info {
     display: flex;
     align-items: end;
@@ -51,11 +60,144 @@
     gap: .5rem;
 
 }
-.user_info .other_info .other_info_item{
+
+.user_info .other_info .other_info_item {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+/* USER PROFILE */
+
+.user_profile {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.user_profile .user_info {
+    max-width: 26rem;
+    margin: 1.5rem;
+}
+
+.user_profile .user_info img {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.user_profile .user_info .name {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.user_profile .user_info .username {
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--muted-gray);
+}
+
+.user_profile .user_info hr {
+    margin: 1.5rem 0;
+    opacity: .5;
+}
+
+.user_profile .user_info .other_info {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+.user_profile .user_info .url{
+    display: flex;
+    gap: .3rem;
+    margin-top: 1.5rem;
+}
+
+/* User repositoreis */
+
+.user_profile .user_repos {
+    width: 100%;
+}
+
+.user_profile .user_repos .repos_list_title{
+    display: flex;
+    justify-content: space-between;
+}
+.user_profile .user_repos .repos_list_title small:hover{
+    color: var(--blue);
+}
+
+.user_profile .user_repos .repo_list {
+    width: 50rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+}
+
+.user_profile .user_repos .repo_list .repo_card {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid var(--muted-gray);
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: var(--tran-05);
+    font-size: 1.4rem;
+    
+}
+.user_profile .user_repos .repo_list .repo_card:hover {
+    background-color: var(--muted-gray);
+}
+.user_profile .user_repos .repo_list .repo_card .card_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.repo_card .repo_name{
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 1.8rem;
+}
+.repo_card:hover .repo_name{
+    color: var(--dark-gray);
+}
+
+.repo_card .stared{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .4rem;
+    gap: .5rem;
+}
+.repo_card .stared .icon {
+    color: yellow;
+}
+.repo_card:hover .stared .icon {
+    transform: scale(1.3);
+}
+.user_profile .user_repos .repo_list .repo_card .card_body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+.repo_card .card_body .repo_fork{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    
+}
+.repo_card .card_body .repo_type{
+    padding: .2rem .6rem;
+    color: var(--muted-gray);
+    border-radius: 1rem;
+    border: .1rem solid var(--muted-gray);
+    
+}
+.repo_card:hover .card_body .repo_type{
+    color: var(--dark-gray);
+    border: .1rem solid var(--dark-gray);
+
 }
 
 ul {
