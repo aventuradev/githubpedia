@@ -35,7 +35,7 @@ const User = ({ params }) => {
             <>
               <div className='repos_list_title'>
                 <h3>Repositorios populares</h3>
-                <Link href={`/repos/`}>
+                <Link href={`/repos/${username}`}>
                   <small>Ver todos</small>
                 </Link>
               </div>

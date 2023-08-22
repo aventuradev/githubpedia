@@ -6,7 +6,7 @@ const RepositoriesList = ({ repositories, fromSearch = false, page }) => {
     return (
         <ul className='repo_list'>
             {repositories.toSorted((a, b) => b.stargazers_count - a.stargazers_count).slice(0, reposToShow).map(repo => (
-                <RepositoryCard key={repo.name} repo={repo} />
+                <RepositoryCard key={repo.name} repo={repo} fromSearch={fromSearch} />
             ))}
         </ul>
     )

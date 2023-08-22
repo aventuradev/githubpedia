@@ -4,7 +4,7 @@
 
 .users_list .user_card {
     padding: 2rem 1.5rem;
-    border: 0.1rem solid var(--muted-gray);
+    border: 0.1rem solid var(--gray);
     border-radius: .5rem;
     display: flex;
     gap: 1.5rem;
@@ -35,6 +35,8 @@
 
 .users_list .user_card .user_names .name {
     color: var(--blue);
+    font-weight: 600;
+    font-size: 1.8rem;
 }
 
 .users_list .user_card .user_names .username {
@@ -42,6 +44,15 @@
     font-weight: 100;
 }
 
+.users_list .user_card:hover .name{
+    color: var(--dark-gray);
+
+}
+.users_list .user_card:hover .username, 
+.users_list .user_card:hover .other_info{
+    color: var(--white);
+    font-weight: 600;
+}
 .users_list .user_card .bio {
     font-size: 1.4rem;
     color: var(--white);
@@ -158,6 +169,15 @@
     justify-content: space-between;
     margin-bottom: 1.5rem;
 }
+.repo_card .favorite {
+    font-size: 1.9rem;
+}
+.repo_card .favorite:hover {
+    transform: scale(1.5);
+}
+.repo_card .favorite:active {
+    transform: scale(2);
+}
 .repo_card .repo_name{
     font-weight: 600;
     color: var(--blue);
@@ -182,7 +202,7 @@
 .user_profile .user_repos .repo_list .repo_card .card_body {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
 }
 .repo_card .card_body .repo_fork{
     display: flex;
@@ -200,7 +220,11 @@
 .repo_card:hover .card_body .repo_type{
     color: var(--dark-gray);
     border: .1rem solid var(--dark-gray);
-
+    
+}
+.repo_card .repo_description{
+    margin-bottom: 1.5rem;
+    /* font-size: 15rem; */
 }
 
 ul {

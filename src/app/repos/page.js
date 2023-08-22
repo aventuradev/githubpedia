@@ -1,71 +1,68 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation';
 
 import useUsers from '@/hooks/useUsers'
-import RepositoriesList from '@/components/RepositoriesList';
-import './repos.css'
 import useDebounced from '@/hooks/useDebounced';
-import Loading from '@/shared/Loading';
+import { RiUserSearchLine } from 'react-icons/ri'
 
+import './repos.css'
 const Repositories = () => {
-  const { user, repositories } = useUsers();
-  const [filteredRepos, setFilteredRepos] = useState(repositories);
-
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const router = useRouter()
+  const { user, getUser, setUser, repositories, setRepositories, getUserRepositories } = useUsers();
 
   const [search, setSearch] = useState('');
-  const debouncedValue = useDebounced(search, 700);
+  const debouncedValue = useDebounced(search, 1500);
 
-  // Manejo de filtrado de repositiorios
+  const getUserRepos = async () => {
+    const res = await getUser(debouncedValue);
+    if (res.status === 200) {
+      await getUserRepositories(debouncedValue)
+    }
+  }
+
   useEffect(() => {
-    setFilteredRepos(
-      repositories.filter(repo =>
-        repo.name.trim().toLowerCase().includes(search.trim().toLowerCase())
-      ))
-  }, [debouncedValue]);
+    setUser({});
+    setRepositories([]);
+  }, [])
 
-  // Manejo de petición para scroll infinito
-  const handleScroll = async () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop + 1 >=
-      document.documentElement.scrollHeight
-    ) {
-      setLoading(true);
-      setTimeout(() => {
-        setPage((prev) => prev + 1);
-        setLoading(false)
-      }, 1000);
+  useEffect(() => {
+    if (debouncedValue.length < 3) return;
+    if (!debouncedValue) {
+      setUser({});
+      setRepositories([]);
+      return
     };
-
-  };
+    getUserRepos();
+  }, [debouncedValue])
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+    if (!!Object.keys(user).length && !!repositories.length) {
+      router.push(`/repos/${user.login}`)
+    }
+  }, [user, repositories])
 
   return (
-    <div className='repo_search'>
-      <div className='header'>
-        <h3>Repositorios públicos de {user.login}</h3>
-        <input
-          type='search'
-          name='search'
-          value={search}
-          placeholder='Buscar repositorio'
-          onChange={(e) => setSearch(e.target.value)}
-        />
+      <div className='search_user_repos'>
+
+        <div className='header'>
+          <h3>Repositorios de usuarios</h3>
+        </div>
+        <div className='label'>
+          <input
+            type='search'
+            name='search'
+            value={search}
+            placeholder='Nombre de usuario'
+            onChange={(e) => setSearch(e.target.value)}
+          />
+
+          <div className='icon'>
+            <RiUserSearchLine />
+          </div>
+          <small>Buscas los repositorios públicos de usuarios escrubiendo su nombre de usuario.</small>
+        </div>
       </div>
-      <RepositoriesList repositories={filteredRepos} fromSearch={true} page={page} />
-      {
-        loading && (
-          <Loading />
-        )
-      }
-    </div>
   )
 }
 

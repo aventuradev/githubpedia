@@ -2,7 +2,7 @@ import { AppContext } from '@/context/Context';
 import { useContext, useState } from 'react';
 
 const useUsers = () => {
-    const {user, setUser, users, setUsers, repositories, setRepositories} = useContext(AppContext);
+    const { user, setUser, users, setUsers, repositories, setRepositories } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
 
     // Método para obtener los usuarios
@@ -10,21 +10,22 @@ const useUsers = () => {
         const prevUsers = [...users]; // se guarda el estado previo de los usuarios antes de la búsqueda
         try {
             setLoading(true);
-            const startedId = !users.pop() ? 1 : (users.pop().id + 1) ; // Indica el id apartir del cual se hará la búsqueda
+            const startedId = !users.pop() ? 1 : (users.pop().id + 1); // Indica el id apartir del cual se hará la búsqueda
             // Los objetos del arreglo de los usuarios no vienen con toda la información
-            const res = await fetch(` https://api.github.com/users?per_page=15&since=${startedId}`,{
+            const res = await fetch(` https://api.github.com/users?per_page=15&since=${startedId}`, {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    "Authorization": `Bearer [YOUR_TOKEN]`, 
-                    "X-GitHub-Api-Version": "2022-11-28" 
+                    // "Authorization": `Bearer {YOUR_KEY}`, 
+                    "Authorization": `Bearer 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`,
+                    "X-GitHub-Api-Version": "2022-11-28"
                 }
             })
             const data = await res.json();
             //  Se actualiza el estado para presentar más pronto información al cliente
             setUsers(prevState => ([...prevState, ...data]));
             setLoading(false)
-            
+
             // // //   Se completa la busqueda de información de la información del usuario
             const arrUsers = [];
             for (let userRes of data) {
@@ -34,7 +35,7 @@ const useUsers = () => {
             // //   Se vuelve actualizar el estado con la información completa de cada usuario
             setUsers([...prevUsers, ...arrUsers]);
             setLoading(false)
-            
+            setUser({})
         } catch (error) {
             setLoading(false);
             return { status: error.status, msg: error.data.message }
@@ -44,17 +45,18 @@ const useUsers = () => {
 
     const getUser = async (username) => {
         try {
-            const res = await fetch(` https://api.github.com/users/${username}`,{
+            const res = await fetch(` https://api.github.com/users/${username}`, {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    "Authorization": `Bearer [YOUR_TOKEN]`, 
-                    "X-GitHub-Api-Version": "2022-11-28" 
+                    // "Authorization": `Bearer [YOUR_KEY]`, 
+                    "Authorization": `Bearer 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`,
+                    "X-GitHub-Api-Version": "2022-11-28"
                 }
             })
             const data = await res.json();
             setUser(data)
-            return {status: 200, user: data}
+            return { status: 200, user: data }
         } catch (error) {
             return { status: error.status, msg: error.data.message }
         }
@@ -64,10 +66,10 @@ const useUsers = () => {
         setLoading(true);
         try {
             const res = await fetch(`https://api.github.com/users/${username}/repos`);
-            const data =  await res.json();
+            const data = await res.json();
             setRepositories(data);
             setLoading(false);
-            return {status: 200}
+            return { status: 200 }
         } catch (error) {
             setLoading(false);
             return { status: error.status, msg: error.data.message }
@@ -75,7 +77,17 @@ const useUsers = () => {
 
     }
 
-    return { users, getUsers, user, getUser, repositories, getUserRepositories, loading, setUser }
+    return {
+        users,
+        getUsers,
+        user,
+        getUser,
+        repositories,
+        getUserRepositories,
+        loading,
+        setUser,
+        setRepositories
+    }
 }
 
 export default useUsers
