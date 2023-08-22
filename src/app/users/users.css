@@ -1,0 +1,63 @@
+.users_list { 
+    width: 100%;
+}
+.users_list .user_card {
+    padding: 2rem 1.5rem;
+    border: 0.1rem solid var(--muted-gray);
+    border-radius: .5rem;
+    margin: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: var(--tran-05);
+}
+.users_list .user_card:hover {
+  background-color: var(--muted-gray);
+}
+.users_list .user_card img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transition: var(--tran-02);
+}
+.users_list .user_card:hover img {
+    transform: scale(1.3);
+}
+.users_list .user_card .user_names{
+    display: flex;
+    gap: .5rem;
+}
+.users_list .user_card .user_names .name{
+    color: var(--blue);
+}
+.users_list .user_card .user_names .username{
+    color: var(--gray);
+    font-weight: 100;
+}
+.users_list .user_card .bio{
+    font-size: 1.4rem;
+    color: var(--white);
+    margin: .8rem 0 .8rem 0;
+    font-weight: 200;
+    max-width: 40rem;
+}
+.user_info .other_info {
+    display: flex;
+    align-items: end;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: var(--gray);
+    font-weight: 100;
+    gap: .5rem;
+
+}
+.user_info .other_info .other_info_item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+ul {
+    list-style: none;
+}
