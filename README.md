@@ -21,9 +21,9 @@ Prueba técnica que consiste en  desarrollar una aplicación web utilizando Next
 ```bash
 npm install
 ```
-3 . Al mismo nivel del archivo package.json cree un archivo:  `.env.local`
+3 . Al mismo nivel del archivo package.json crea un archivo:  `.env.local`
 
-y cree una variable llamada: `NEXT_PUBLIC_GITHUB_TOKEN`
+y dentro de este crea una variable llamada: `NEXT_PUBLIC_GITHUB_TOKEN`
  
 que tendrá como valor tu token de acceso generado en tu cuenta de github, *(en la siguiente sección es cómo crear el token)*, de la siguiente manera:
 ```javascript
