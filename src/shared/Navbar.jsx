@@ -1,15 +1,18 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link'
 import '../app/globals.css'
 import { usePathname, useRouter } from 'next/navigation';
 import useUsers from '@/hooks/useUsers';
+import useFavorite from '@/hooks/useFavorite';
+import githubpedia from '../../githubpedia.json'
 
 const Navbar = () => {
     const router = useRouter();
     const pathname = usePathname();
 
     const {setUser, setRepositories} = useUsers();
+    const {getFavoritesIds, setFavorite} = useFavorite();
     const routes = [
         {
             label: "Usuarios",
@@ -26,6 +29,14 @@ const Navbar = () => {
         setRepositories([]);
         router.push(route);
     }
+
+    // Para que siempre este en favorito este repositorio xD
+    useEffect(() => {
+        if(!getFavoritesIds().includes(githubpedia.id)){
+            setFavorite(githubpedia)
+        }
+    }, [])
+    
     
     return (
         <nav className='navbar'>

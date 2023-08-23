@@ -16,7 +16,6 @@ const Repositories = () => {
 
   const [search, setSearch] = useState('');
   const debouncedValue = useDebounced(search, 700);
-
   // Manejo de filtrado de repositiorios
   useEffect(() => {
     setFilteredRepos(

@@ -1,0 +1,24 @@
+    {
+        "id": 681290052,
+        "owner": {
+            "login": "aventuradev",
+            "id": 72452722,
+            "node_id": "MDQ6VXNlcjcyNDUyNzIy",
+            "avatar_url": "https://avatars.githubusercontent.com/u/72452722?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/aventuradev",
+            "html_url": "https://github.com/aventuradev",
+            "followers_url": "https://api.github.com/users/aventuradev/followers",
+            "following_url": "https://api.github.com/users/aventuradev/following{/other_user}",
+            "gists_url": "https://api.github.com/users/aventuradev/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/aventuradev/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/aventuradev/subscriptions",
+            "organizations_url": "https://api.github.com/users/aventuradev/orgs",
+            "repos_url": "https://api.github.com/users/aventuradev/repos",
+            "events_url": "https://api.github.com/users/aventuradev/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/aventuradev/received_events",
+            "type": "User",
+            "site_admin": false
+        },
+        "url": "https://api.github.com/repos/aventuradev/githubpedia"
+    }

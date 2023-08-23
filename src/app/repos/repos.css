@@ -1,26 +1,27 @@
-
 .repo_search {
     width: 100%;
     margin-bottom: 2.5rem;
 }
-.repo_search .header{
+
+.repo_search .header {
     margin-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.repo_search input{
+.repo_search input {
     width: 30rem;
     padding: .9rem;
     border-radius: .5rem;
 }
 
-.repo_search .repos_list_title{
+.repo_search .repos_list_title {
     display: flex;
     justify-content: space-between;
 }
-.repo_search .repos_list_title small:hover{
+
+.repo_search .repos_list_title small:hover {
     color: var(--blue);
 }
 
@@ -30,7 +31,7 @@
     width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    
+
 }
 
 .repo_search .repo_list .repo_card {
@@ -42,56 +43,66 @@
     margin-top: 2rem;
     transition: var(--tran-05);
     font-size: 1.4rem;
-    
+
 }
+
 .repo_search .repo_list .repo_card:hover {
     background-color: var(--muted-gray);
 }
+
 .repo_search .repo_list .repo_card .card_header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
 }
-.repo_card .repo_name{
+
+.repo_card .repo_name {
     font-weight: 600;
     color: var(--blue);
     font-size: 1.8rem;
 }
-.repo_card:hover .repo_name{
+
+.repo_card:hover .repo_name {
     color: var(--dark-gray);
 }
 
-.repo_card .stared{
+.repo_card .stared {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
 }
+
 .repo_card .stared .icon {
     color: yellow;
 }
+
 .repo_card:hover .stared .icon {
     transform: scale(1.3);
 }
+
 .repo_search .repo_list .repo_card .card_body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
 }
-.repo_card .card_body .repo_fork{
+
+.repo_card .card_body .repo_fork {
     display: flex;
     align-items: center;
     gap: .2rem;
-    
+
 }
-.repo_card .card_body .repo_type{
+
+.repo_card .card_body .repo_type {
     padding: .2rem .6rem;
     color: var(--muted-gray);
     border-radius: 1rem;
     border: .1rem solid var(--muted-gray);
-    
+
 }
-.repo_card:hover .card_body .repo_type{
+
+.repo_card:hover .card_body .repo_type {
     color: var(--dark-gray);
     border: .1rem solid var(--dark-gray);
 
@@ -99,24 +110,124 @@
 
 /* search_user_repos */
 
-.search_user_repos{
+.search_user_repos {
     width: 100%;
 }
-.search_user_repos .label{
+
+.search_user_repos .label {
     margin-top: 3rem;
     text-align: center;
 }
 
-.search_user_repos input{
+.search_user_repos input {
     margin-bottom: 4.5rem;
     width: 30rem;
     padding: .9rem;
     border-radius: .5rem;
 }
-.search_user_repos .icon{
+
+.search_user_repos .icon {
     font-size: 10rem;
     color: var(--muted-gray);
 }
-.search_user_repos small{
+
+.search_user_repos small {
     color: var(--muted-gray);
+}
+
+/* Repo Details */
+
+.repo_details .repo_details_header {
+    display: flex;
+    padding: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo_details .repo_details_header .owner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.repo_details .repo_details_header .owner img {
+    width: 6.5rem;
+    border-radius: 50%;
+}
+
+.repo_details .repo_details_header .owner .owner_name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.repo_details .repo_details_header .atributes {
+    display: flex;
+    gap: 2.5rem;
+
+}
+
+.repo_details .repo_details_header .atributes p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.repo_details .repo_details_header .atributes .heart {
+    cursor: pointer;
+}
+
+.repo_details .repo_details_header .atributes .heart:hover {
+    transform: scale(1.5);
+}
+
+.repo_details .repo_details_header .atributes .heart:active {
+    transform: scale(2);
+}
+
+.repo_details hr {
+    opacity: .2;
+    margin-bottom: 2rem;
+}
+.repo_details hr:nth-child(4) {
+    margin-top: 3rem;
+}
+
+.repo_details .repo_details_body .name_type_lenguage {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.repo_details .repo_details_body .name_type_lenguage .type_language {
+    display: flex;
+    gap: 2.5rem;
+}
+.repo_details_body .name_type_lenguage .type_language .repo_visibility{
+    padding: .2rem .6rem;
+    color: var(--muted-gray);
+    border-radius: 1rem;
+    border: .1rem solid var(--muted-gray);
+}
+.repo_details_body .description{
+    margin-top: 2rem;
+}
+.repo_details_body .description .about{
+    color: var(--muted-gray);
+}
+.repo_details_body .description .repo_description {
+    font-size: 2rem;
+}
+.repo_details .repo_details_footer .url{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: .5rem;
+    
+}
+.repo_details .repo_details_footer .url:hover{
+    color: var(--blue);
 }

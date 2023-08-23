@@ -16,11 +16,16 @@ const useFavorite = () => {
     
     const removeFavorite = (id) => {
         const favs = getFavorites();
-
+        
         window.localStorage.setItem('fav', JSON.stringify([...favs.filter(repo => repo.id !== id)]))
     }
+    const getFavoritesIds = () => {
+        const favRepositoriesIds = JSON.parse(window.localStorage.getItem('fav'));
+        
+        return !!favRepositoriesIds ? favRepositoriesIds.map( f => f.id ) : []
+    }
 
-    return { setFavorite, getFavorites, removeFavorite }
+    return { setFavorite, getFavorites, removeFavorite, getFavoritesIds }
 }
 
 export default useFavorite

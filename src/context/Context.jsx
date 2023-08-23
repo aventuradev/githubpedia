@@ -7,6 +7,7 @@ const AppProviders = ({ children }) => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({});
     const [repositories, setRepositories] = useState([]);
+    const [repository, setRepository] = useState({});
     
     return (
         <AppContext.Provider value={{
@@ -15,7 +16,9 @@ const AppProviders = ({ children }) => {
             setUser,
             setUsers,
             repositories, 
-            setRepositories
+            setRepositories,
+            repository,
+            setRepository
         }}>
             {
                 children

@@ -1,8 +1,9 @@
 import { AppContext } from '@/context/Context';
 import { useContext, useState } from 'react';
+import aventura from '../../aventura.json'
 
 const useUsers = () => {
-    const { user, setUser, users, setUsers, repositories, setRepositories } = useContext(AppContext);
+    const { user, setUser, users, setUsers, repositories, setRepositories, repository, setRepository } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
 
     // Método para obtener los usuarios
@@ -16,8 +17,7 @@ const useUsers = () => {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    // "Authorization": `Bearer {YOUR_KEY}`, 
-                    "Authorization": `Bearer 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`,
+                    "Authorization": `Bearer {YOUR_KEY}`, 
                     "X-GitHub-Api-Version": "2022-11-28"
                 }
             })
@@ -33,7 +33,11 @@ const useUsers = () => {
                 arrUsers.push({ ...userRes, ...data.user })
             }
             // //   Se vuelve actualizar el estado con la información completa de cada usuario
-            setUsers([...prevUsers, ...arrUsers]);
+            if(!prevUsers.length){ // Esto para que yo aparezaca de primero xD
+                setUsers([...prevUsers, ...arrUsers].toSpliced(0,0, aventura));
+            }else{
+                setUsers([...prevUsers, ...arrUsers]);
+            }
             setLoading(false)
             setUser({})
         } catch (error) {
@@ -49,8 +53,7 @@ const useUsers = () => {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    // "Authorization": `Bearer [YOUR_KEY]`, 
-                    "Authorization": `Bearer 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`,
+                    "Authorization": `Bearer [YOUR_KEY]`, 
                     "X-GitHub-Api-Version": "2022-11-28"
                 }
             })
@@ -86,7 +89,9 @@ const useUsers = () => {
         getUserRepositories,
         loading,
         setUser,
-        setRepositories
+        setRepositories,
+        repository, 
+        setRepository
     }
 }
 

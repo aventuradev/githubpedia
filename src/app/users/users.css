@@ -187,6 +187,10 @@
     color: var(--dark-gray);
 }
 
+.repo_card .repo_name:hover{
+    transform: scale(1.15);
+    /* color: var(--blue); */
+}
 .repo_card .stared{
     display: flex;
     align-items: center;
