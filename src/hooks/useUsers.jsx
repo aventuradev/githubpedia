@@ -17,7 +17,7 @@ const useUsers = () => {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    "Authorization": `Bearer {YOUR_KEY}`, 
+                    "Authorization": `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
                     "X-GitHub-Api-Version": "2022-11-28"
                 }
             })
@@ -53,7 +53,7 @@ const useUsers = () => {
                 method: "GET",
                 headers: {
                     "Accept": "application/vnd.github+json",
-                    "Authorization": `Bearer [YOUR_KEY]`, 
+                    "Authorization": `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
                     "X-GitHub-Api-Version": "2022-11-28"
                 }
             })

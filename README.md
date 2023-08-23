@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Githubpedia 💻
 
-## Getting Started
+Prueba técnica que consiste en  desarrollar una aplicación web utilizando Next.js para conectarte y consumir el API de GitHub. La aplicación deberá:
 
-First, run the development server:
+[✅] Permitir listar los usuarios.
 
+[✅] Buscar repositorios públicos por nombre de usuario.
+
+[✅] Mostrar los detalles básicos de cada repositorio encontrado.
+
+[✅] Implementar una funcionalidad adicional que permita guardar ciertos repositorios como "Favoritos" en la aplicación.
+
+[✅] Uso de autenticación básica para realizar las peticiones.
+
+
+## Instalación
+
+1 . Clone o descargue el zip del [repositorio](https://github.com/aventuradev/githubpedia.git).
+
+2 . En la carpeta del proyecto instale los módulos con:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install
+```
+3 . Al mismo nivel del archivo package.json cree un archivo:  `.env.local`
+
+y cree una variable llamada: `NEXT_PUBLIC_GITHUB_TOKEN`
+ 
+que tendrá como valor tu token de acceso generado en tu cuenta de github, *(en la siguiente sección es cómo crear el token)*, de la siguiente manera:
+```javascript
+NEXT_PUBLIC_GITHUB_TOKEN='YOUR_TOKEN'
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4 . Con esto realizado solo resta iniciar el proyecto con el comando:
+```bash
+npm run dev
+```
+que se ejecutara por defecto en el puerto 3000, pudiendo así acceder a través del
+```javascript
+http://localhost:300
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Cómo crear el token de acceso de github
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1 . Ya autenticad@ en tu perfil de github, en la esquina superior derecha de cualquier página, haz clic en tu foto de perfil y luego haz clic en **Configuración**.
 
-## Learn More
+2 . En la parte inferior de barra lateral izquierda, haz clic en **Configuración del desarrollador**.
 
-To learn more about Next.js, take a look at the following resources:
+3 . En la barra lateral izquierda, en Tokens de acceso personal , haga clic en **Tokens (clásicos)**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4 . Haga clic en **Generar nuevo token**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5 . En **Nombre del token**, ingresa un nombre para el token. **En Caducidad**, selecciona una caducidad para el token. Opcionalmente, en **Descripción**, agregua una nota para describir el propósito del token.
 
-## Deploy on Vercel
+6 . En Permisos , solo necesitas marcar los de **usuarios**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```javascript
+[✅] usuarios
+    [✅] read:userRead
+    [✅] user:emailAccess 
+    [✅] user:follow
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+7 . Haces clic en **Generar token**. Una vez generado, lo copias y lo colocas en le archivo mencionado antes. 
+
+
+## Sobre el desarrollo
+
+Entre los aspectos principales para el desarrollo del proyecto fue el uso ***Context**, para sacar ventaja de *la permanencia de los datos* una vez solicitados y poder utilizarlos y reutilizarlos por toda la aplicación sin la necesidad de recurrir a *peticiones innecesarias* al API. Combinadolo tambiéb con la creación y uso de **Hooks personalidos** para funciones específicas requeridas, de igual forma, por toda la aplicación. 
+
+El ***diseño del Frontend*** inspirado en la misma plataforma de github con CSS Vanilla 100% sin ningún uso de librería.
+
+## ¡Un proyecto muy entretenido de desarrollar!
