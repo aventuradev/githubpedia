@@ -15,7 +15,7 @@ Prueba técnica que consiste en  desarrollar una aplicación web utilizando Next
 
 ## Instalación
 
-1 . Clone o descargue el zip del [repositorio](https://github.com/aventuradev/githubpedia.git).
+1 . Clona o descargua el zip del [repositorio](https://github.com/aventuradev/githubpedia.git).
 
 2 . En la carpeta del proyecto instale los módulos con:
 ```bash
@@ -65,7 +65,7 @@ http://localhost:300
 
 ## Sobre el desarrollo
 
-Entre los aspectos principales para el desarrollo del proyecto fue el uso ***Context**, para sacar ventaja de *la permanencia de los datos* una vez solicitados y poder utilizarlos y reutilizarlos por toda la aplicación sin la necesidad de recurrir a *peticiones innecesarias* al API. Combinadolo tambiéb con la creación y uso de **Hooks personalidos** para funciones específicas requeridas, de igual forma, por toda la aplicación. 
+Entre los aspectos principales para el desarrollo del proyecto fue el uso ***Context**, para sacar ventaja de *la permanencia de los datos* una vez solicitados y poder utilizarlos y reutilizarlos por toda la aplicación sin la necesidad de recurrir a *peticiones innecesarias* al API. Combinadolo también con la creación y uso de **Hooks personalizados** para funciones específicas requeridas, de igual forma, por toda la aplicación. 
 
 El ***diseño del Frontend*** inspirado en la misma plataforma de github con CSS Vanilla 100% sin ningún uso de librería.
 
