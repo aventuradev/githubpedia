@@ -36,7 +36,7 @@ npm run dev
 ```
 que se ejecutara por defecto en el puerto 3000, pudiendo así acceder a través del
 ```javascript
-http://localhost:300
+http://localhost:3000
 ```
 
 ## Cómo crear el token de acceso de github
@@ -65,7 +65,7 @@ http://localhost:300
 
 ## Sobre el desarrollo
 
-Entre los aspectos principales para el desarrollo del proyecto fue el uso ***Context**, para sacar ventaja de *la permanencia de los datos* una vez solicitados y poder utilizarlos y reutilizarlos por toda la aplicación sin la necesidad de recurrir a *peticiones innecesarias* al API. Combinadolo también con la creación y uso de **Hooks personalizados** para funciones específicas requeridas, de igual forma, por toda la aplicación. 
+Entre los aspectos principales para el desarrollo del proyecto fue el uso **Context**, para sacar ventaja de *la permanencia de los datos* una vez solicitados y poder utilizarlos y reutilizarlos por toda la aplicación sin la necesidad de recurrir a *peticiones innecesarias* al API. Combinadolo también con la creación y uso de **Hooks personalizados** para funciones específicas requeridas, de igual forma, por toda la aplicación. 
 
 El ***diseño del Frontend*** inspirado en la misma plataforma de github con CSS Vanilla 100% sin ningún uso de librería.
 
